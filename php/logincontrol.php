@@ -7,17 +7,17 @@
   {
     // USER
     $username = $_POST['username'];
-    $password = strtoupper($_POST['password']);
+    $password = $_POST['password'];
 
     // Variable
     $error_counter = 0;
 
-    if((empty($username) || (strlen($username) > 10) || (!preg_match('/[a-zA-Z0-9]/', $username))) && (empty($password) || (strlen($password) > 10) || (!preg_match('/[a-zA-Z0-9]/', $password))))
+    if((empty($username) || (strlen($username) > 10) || (!preg_match('/^[a-zA-Z0-9]*$/', $username))) && (empty($password) || (strlen($password) > 10) || (!preg_match('/^[A-Z0-9]*$/', $password))))
     {
       $error_counter += 1;
        // Alert message
        $login_control_alert_message = array(
-        "message" => "Please fill the required fields (Username, Password).",
+        "message" => "Please fill the required fields (Username, Password)",
         "type" => "danger"
       );
       $_SESSION['login_control_alert_message'] = $login_control_alert_message;
@@ -25,7 +25,7 @@
     }
     else {
       // username control
-      if(empty($username) || (strlen($username) > 10) || (!preg_match('/[a-zA-Z0-9]/', $username)))
+      if(empty($username) || (strlen($username) > 10) || (!preg_match('/^[a-zA-Z0-9]*$/', $username)))
       {
         $error_counter += 1;
         // Alert message
@@ -37,7 +37,7 @@
         header("Location: ../index.php");
       }
       // password control
-      if(empty($password) || (strlen($password) > 10) || (!preg_match('/[a-zA-Z0-9]/', $password)))
+      if(empty($password) || (strlen($password) > 10) || (!preg_match('/^[A-Z0-9]*$/', $password)))
       {
         $error_counter += 1;
         // Alert message

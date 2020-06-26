@@ -29,13 +29,13 @@
         <!-- Grid row -->
         <div class="row d-flex justify-content-center mt-5">
           <!-- Grid column-->
-          <div class="col-md-6 col-sm-8">
+          <div class="col-md-10">
             <div class="border border-dark bg-white">
               <!-- Header -->
               <div class="section-heading text-center mt-5">
                 <img alt="avatar" src="img/avatar.png" width="100" height="100" />
-                <h2>Login</h2>
-                <span class="text-muted">Designing with people, for people.</span>
+                <h2>Log In</h2>
+                <span class="text-muted">Digital Arts Network</span>
                 <hr/>
               </div>
               <!-- Header -->
@@ -50,16 +50,16 @@
                 <!-- Error message -->
                 <form action="php/logincontrol.php" method="POST" autocomplete="off">
                   <!-- Username -->
-                  <div class="form-group mt-2 mb-2">
+                  <div class="form-group mt-3 mb-3">
                     <label for="username-label">Username</label>
-                    <input class="form-control" type="text" maxlength="10" name="username" placeholder="username" required/>
+                    <input class="form-control" type="text" maxlength="10" name="username" required/>
                   <div>
                   <!-- Username -->
                   <!-- Password -->
-                  <div class="form-group mt-2 mb-2">
+                  <div class="form-group mt-3 mb-3">
                     <label for="password-label">Password</label>
-                    <input class="form-control" type="password" maxlength="10" name="password" id="password" placeholder="password" oninput="this.value = this.value.toUpperCase()" required/>
-                    <input type="checkbox" onclick="passvisibility()">Show Password
+                    <input class="form-control mb-3" type="password" maxlength="10" name="password" id="password" oninput="this.value = this.value.toUpperCase()" required/>
+                    <label for="show-password-label"><input type="checkbox" onclick="passvisibility()"> Show password</label>
                   <div>
                   <!-- Password -->
                   <button type="submit" class="btn btn-block btn-primary mt-3 mb-3" style="border-radius:5px;" value="Submit" name="submit">Login</button>
